@@ -51,16 +51,6 @@ function Blocks() {
     setWinner(newArr);
   }, [state.checked]);
 
-  // useEffect(() => {
-  //   if(state.won){
-  //     setTimeout(() => {
-  //       setState(state => {
-  //         return {...state, won: false}
-  //       })
-  //     }, 2000);
-  //   }
-  // }, [state.won])
-
   return (
     <>
       <div className="wrapper">

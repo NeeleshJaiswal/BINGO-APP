@@ -55,13 +55,13 @@ export function start() {
   
       context.clearRect(0, 0, W, window.innerHeight);
   
-      for (var i = 0; i < maxConfettis; i++) {
+      for (let i = 0; i < maxConfettis; i++) {
         results.push(particles[i].draw());
       }
   
       let particle = {};
       let remainingFlakes = 0;
-      for (var i = 0; i < maxConfettis; i++) {
+      for (let i = 0; i < maxConfettis; i++) {
         particle = particles[i];
   
         particle.tiltAngle += particle.tiltAngleIncremental;
@@ -94,7 +94,7 @@ export function start() {
     );
   
     // Push new confetti objects to `particles[]`
-    for (var i = 0; i < maxConfettis; i++) {
+    for (let i = 0; i < maxConfettis; i++) {
       particles.push(new confettiParticle());
     }
   
