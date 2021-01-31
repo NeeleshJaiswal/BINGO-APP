@@ -22,13 +22,3 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 This project has been deployed in netlify and can be accessed from this url https://kind-cray-c5f558.netlify.app/
 
 
-### Views from different devices
-
-## WEB 
-
-
-
-## I-PAD
-
-## I-Phone X
-
