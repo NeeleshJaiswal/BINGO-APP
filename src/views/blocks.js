@@ -9,7 +9,6 @@ function Blocks() {
   
   const [state, setState] = useState({ checked: {} });
   const { setWinner } = useContext(WinnerContext);
-  
   const toggle = (id) => {
     setState((state) => {
       const checked = { ...state.checked, [id]: !state.checked[id] };
