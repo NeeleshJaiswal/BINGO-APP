@@ -24,7 +24,7 @@ const data = [
     "can we take this offline?",
     "is ____ on the call?",
     "Could you share this slides afterwards?",
-    "can somebody grant presenter rights?",
+    "somebody grant presenter rights?",
     "can you email that to everyone?",
     "CONF CALL 😷 BINGO",
     "sorry, I had problems losing in",
