@@ -25,10 +25,11 @@ function Tile({ id, children, onToggle, isSet }) {
     onToggle(id);
   };
   return (
+    <div className='tile-outer'>
     <div
       onClick={() => handleClick(id)}
       className={clsx(
-        `tile ${isSet ? "tile--set" : ""}`,
+        `tile`,
         id !== "12" && flag && "highlighted"
       )}
     >
@@ -48,6 +49,7 @@ function Tile({ id, children, onToggle, isSet }) {
           </div>
         </>
       )}
+    </div>
     </div>
   );
 }
