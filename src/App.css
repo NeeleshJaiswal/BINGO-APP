@@ -25,11 +25,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
-  /* padding: 10px; */
-  /* min-height: 40px;
-  font-weight: bold;
-  font-size: 20px; */
   height: 100px;
   width: 100px;
   background-color: white;
@@ -50,6 +45,11 @@
   border: 2px solid black;
   border-radius: 50%;
   padding: 25px;
+	font-size: 10px;
+}
+
+.highlighted {
+	background-color: #d0f0c0;
 }
 
 canvas {
@@ -100,7 +100,12 @@ canvas {
   .bingo-title-12 {
     border: 2px solid black;
     border-radius: 50%;
-    padding: 11px;
-    font-size: 6px;
+    padding: 12px;
+		font-size: 5px;
   }
+
+  .highlighted {
+		background-color: #d0f0c0;
+	}
+
 }

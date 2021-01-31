@@ -1,45 +1,13 @@
-import React, { useEffect, useState } from "react";
-
+import React, { useEffect, useState, useContext } from "react";
+import { WinnerContext } from "../context/winner.context";
 import Tile from "./tile";
-
-// import shuffle from "shuffle-array";
 import Confetti from "./confetti";
-
-const data = [
-  "(child noises in the background)",
-  "Hello, hello?",
-  "I need to jump in another call",
-  "can everyone go on mute",
-  "could you please get closer to the mic",
-  "(load painful echo / feedback)",
-  "Next slide, please.",
-  "can we take this offline?",
-  "is ____ on the call?",
-  "Could you share this slides afterwards?",
-  "can somebody grant presenter rights?",
-  "can you email that to everyone?",
-  "CONF CALL 😷 BINGO",
-  "sorry, I had problems losing in",
-  "(animal noises in the background)",
-  "sorry, I didn’t found the conference id",
-  "I was having connection issues",
-  "I’ll have to get back to you",
-  "who just joined?",
-  "sorry, something ____ with my calendar",
-  "do you see my screen?",
-  "lets wait for ____!",
-  "you will send the minutes?",
-  "sorry, I was on mute.",
-  "can you repeat, please?",
-];
-
-// const data = shuffle(bbb).reduce(
-//   (data, value, index) => ({ ...data, [index]: value }),
-//   {}
-// );
+import data, { lines } from "../utilities/data";
 
 function Blocks() {
+  
   const [state, setState] = useState({ checked: {} });
+  const { setWinner } = useContext(WinnerContext);
   const isWon = (checked) => {
     const range = [0, 1, 2, 3, 4];
     return (
@@ -56,7 +24,6 @@ function Blocks() {
     );
   };
   const toggle = (id) => {
-    
     setState((state) => {
       const checked = { ...state.checked, [id]: !state.checked[id] };
       const won = isWon(checked);
@@ -68,8 +35,31 @@ function Blocks() {
     });
   };
   useEffect(() => {
-    console.log('state condition>>> ', state);
-  }, [state])
+    let newArr = [];
+    for (let i = 0; i < lines.length; i++) {
+      const [a, b, c, d, e] = lines[i];
+      if (
+        state.checked[a] &&
+        state.checked[b] &&
+        state.checked[c] &&
+        state.checked[d] &&
+        state.checked[e]
+      ) {
+        newArr.push(a, b, c, d, e);
+      }
+    }
+    setWinner(newArr);
+  }, [state.checked]);
+
+  // useEffect(() => {
+  //   if(state.won){
+  //     setTimeout(() => {
+  //       setState(state => {
+  //         return {...state, won: false}
+  //       })
+  //     }, 2000);
+  //   }
+  // }, [state.won])
 
   return (
     <>
